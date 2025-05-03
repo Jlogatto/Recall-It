@@ -64,7 +64,7 @@ fun LearnQuizScreen(
         }
     ) { padding ->
         if (card == null) {
-            // no cards in this set
+            //no cards in this set
             Box(
                 modifier = Modifier
                     .padding(padding)

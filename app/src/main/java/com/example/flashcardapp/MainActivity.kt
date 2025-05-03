@@ -97,11 +97,11 @@ fun FlashcardApp() {
                 startDestination = Screen.Login.route,
                 modifier         = Modifier.padding(innerPadding)
             ) {
-                // auth
+                //auth
                 composable(Screen.Login.route)  { LoginScreen(navController) }
                 composable(Screen.Signup.route) { SignupScreen(navController) }
 
-                // main tabs
+                //main tabs
                 composable(Screen.Sets.route) {
                     HomeScreen(
                         navController    = navController,
@@ -116,7 +116,7 @@ fun FlashcardApp() {
                     LearnSelectionScreen(navController, dao)
                 }
 
-                // detail & quiz
+                //detail & quiz
                 composable(
                     route     = Screen.LearnQuiz.route,
                     arguments = listOf(navArgument("setName") { type = NavType.StringType })
@@ -132,7 +132,7 @@ fun FlashcardApp() {
                     SetDetailScreen(navController, dao, setName)
                 }
 
-                // ⚙️ edit set
+                //edit set
                 composable(
                     route     = Screen.EditSet.route,
                     arguments = listOf(navArgument("setName") { type = NavType.StringType })
@@ -141,7 +141,7 @@ fun FlashcardApp() {
                     EditSetScreen(navController, dao, setName)
                 }
 
-                // settings
+                //settings
                 composable(Screen.Settings.route) {
                     SettingsScreen(
                         navController      = navController,

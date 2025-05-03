@@ -27,10 +27,10 @@ import com.google.firebase.auth.FirebaseAuth
 fun SignupScreen(
     navController: NavController
 ) {
-    // Firebase authentication instance
+
     val auth = FirebaseAuth.getInstance()
 
-    // Local state for form inputs and any error message
+    //local state for form inputs error message
     var email    by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var errorMsg by remember { mutableStateOf<String?>(null) }
@@ -44,7 +44,6 @@ fun SignupScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // ===== App Title =====
             Text(
                 text = "Recall-It",
                 style = MaterialTheme.typography.displayLarge.copy(
@@ -63,7 +62,7 @@ fun SignupScreen(
                     .padding(vertical = 24.dp)
             )
 
-            // ===== Email Field =====
+
             OutlinedTextField(
                 value         = email,
                 onValueChange = { email = it },
@@ -74,7 +73,7 @@ fun SignupScreen(
 
             Spacer(Modifier.height(12.dp))
 
-            // ===== Password Field =====
+
             OutlinedTextField(
                 value                 = password,
                 onValueChange         = { password = it },
@@ -84,7 +83,7 @@ fun SignupScreen(
                 modifier              = Modifier.fillMaxWidth()
             )
 
-            // ===== Error Message =====
+
             errorMsg?.let {
                 Spacer(Modifier.height(8.dp))
                 Text(
@@ -95,7 +94,7 @@ fun SignupScreen(
 
             Spacer(Modifier.height(24.dp))
 
-            // ===== Sign Up Button =====
+
             Button(
                 onClick = {
                     auth.createUserWithEmailAndPassword(email, password)
@@ -115,7 +114,7 @@ fun SignupScreen(
 
             Spacer(Modifier.height(8.dp))
 
-            // ===== Navigate Back to Login =====
+
             TextButton(onClick = { navController.popBackStack() }) {
                 Text("Already have an account? Log in")
             }

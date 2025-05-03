@@ -1,5 +1,3 @@
-// app/src/main/java/com/example/flashcardapp/screens/LoginScreen.kt
-
 package com.example.flashcardapp.screens
 
 import androidx.compose.foundation.layout.*
@@ -27,10 +25,10 @@ import com.google.firebase.auth.FirebaseAuth
 fun LoginScreen(
     navController: NavController
 ) {
-    // Firebase auth instance
+
     val auth = FirebaseAuth.getInstance()
 
-    // Local state for email, password, and error message
+
     var email    by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var errorMsg by remember { mutableStateOf<String?>(null) }
@@ -44,7 +42,6 @@ fun LoginScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // ===== App Title =====
             Text(
                 text = "Recall-It",
                 style = MaterialTheme.typography.displayLarge.copy(
@@ -63,7 +60,6 @@ fun LoginScreen(
                     .padding(vertical = 24.dp)
             )
 
-            // ===== Email Field =====
             OutlinedTextField(
                 value           = email,
                 onValueChange   = { email = it },
@@ -74,7 +70,6 @@ fun LoginScreen(
 
             Spacer(Modifier.height(12.dp))
 
-            // ===== Password Field =====
             OutlinedTextField(
                 value                 = password,
                 onValueChange         = { password = it },
@@ -84,7 +79,6 @@ fun LoginScreen(
                 modifier              = Modifier.fillMaxWidth()
             )
 
-            // ===== Error Message =====
             errorMsg?.let {
                 Spacer(Modifier.height(8.dp))
                 Text(
@@ -95,7 +89,7 @@ fun LoginScreen(
 
             Spacer(Modifier.height(24.dp))
 
-            // ===== Login Button =====
+
             Button(
                 onClick = {
                     auth.signInWithEmailAndPassword(email, password)
@@ -115,7 +109,6 @@ fun LoginScreen(
 
             Spacer(Modifier.height(8.dp))
 
-            // ===== Navigate to Sign-Up =====
             TextButton(
                 onClick = { navController.navigate(Screen.Signup.route) }
             ) {

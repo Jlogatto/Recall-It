@@ -179,7 +179,7 @@ fun SetDetailScreen(
                 }
             }
 
-            //Delete confirmation dialog
+            //Delete confirmation
             if (showDeleteDialog) {
                 AlertDialog(
                     onDismissRequest = { showDeleteDialog = false },
