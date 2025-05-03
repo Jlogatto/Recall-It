@@ -141,7 +141,7 @@ fun FlashcardApp() {
                     EditSetScreen(navController, dao, setName)
                 }
 
-                // settings
+                //Settings
                 composable(Screen.Settings.route) {
                     SettingsScreen(
                         navController      = navController,
